@@ -17,6 +17,7 @@ class PostSeeder extends Seeder
             DB::table("posts")->insert([
                 'title' => "hello world",
                 'content'  => "Just Do it.",
+                'tag_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
