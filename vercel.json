@@ -1,6 +1,7 @@
 {
     "version": 2,
     "builds": [
+        { "commands": ["bash build.sh"] },
         {
             "src": "api/index.php",
             "use": "vercel-php@0.6.1"
