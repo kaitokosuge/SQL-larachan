@@ -3,6 +3,11 @@
     @foreach ($posts as $post)
         <div class="px-3 py-2 border"><p class="text-xs">title</p>{{$post->title}}</div>
     @endforeach
+    <form action="/post" method="POST">
+        @csrf
+        <input type="text"name="title"/>
+        <button type="submit">send</button>
+    </form>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
