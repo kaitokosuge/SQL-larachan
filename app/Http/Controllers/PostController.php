@@ -21,18 +21,18 @@ class PostController extends Controller
 
         // query builder
         $startTime = microtime(true);
-        $query = DB::table("posts")->get();
+        $query = DB::table("posts");
         $runningTime =  microtime(true) - $startTime;
-        dd($runningTime);
-        dd($query);
+        // dd($runningTime);
+        // dd($query);
 
         $runnedSql = $query->toSql();
 
-        // $posts = $query->get();
+        $posts = $query->get();
         $postsQuery = Post::with("tag")->where("title", 'aaa');
         $runnedSqlpostsQuery = $postsQuery->toRawSql();
         // dd($runnedSqlpostsQuery);
-        dd(preg_replace_array('/\?/', $postsQuery->getBindings(), $postsQuery->toSql()));
+        // dd(preg_replace_array('/\?/', $postsQuery->getBindings(), $postsQuery->toSql()));
         // dd($postsQuery);
 
         return view("post.index")->with(["posts" => $posts, "runnedSql" => $runnedSql]);
