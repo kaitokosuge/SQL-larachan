@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->string("content");
+            $table->unique(["title", "content"]);
             $table->foreignId("tag_id")->constraint()->nullale();
             $table->timestamps();
         });

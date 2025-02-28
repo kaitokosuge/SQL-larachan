@@ -35,6 +35,8 @@ class PostController extends Controller
         // dd(preg_replace_array('/\?/', $postsQuery->getBindings(), $postsQuery->toSql()));
         // dd($postsQuery);
 
+
+
         return view("post.index")->with(["posts" => $posts, "runnedSql" => $runnedSql]);
     }
 
